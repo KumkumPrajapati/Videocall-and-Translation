@@ -2,7 +2,7 @@ let IS_PROD = true;
 
 
 const server = IS_PROD ?
- "https://translate-meet-zone-1.onrender.com" :
+ "https://videocalling-p71n.onrender.com/" :
     "http://localhost:8080"
      
 
