@@ -1,3 +1,8 @@
+
+import 'dotenv/config';
+
+
+import 'dotenv/config';
 import express from "express";
 import mongoose from "mongoose";
 import { createServer } from "node:http";
@@ -15,10 +20,18 @@ app.use(cors());
 app.use(express.json({limit : "40kb"}));
 app.use(express.urlencoded({ limit : "40kb", extended: true}));
  app.use("/api/v1/users", userRoutes);
+ const url =process.env.MONGO_URL;
+ if (!url) {
+   console.error("MONGO_URL environment variable is not set");
+   process.exit(1);
+ }
  
+ 
+ 
+ ;
 const start = async()=>{
            
-    const connectionDb = await mongoose.connect("mongodb+srv://KumkumDaksh:6NkCw4KMSFJUGgTN@zoomclone.b3xwx.mongodb.net/?retryWrites=true&w=majority&appName=ZoomClone");
+    const connectionDb = await mongoose.connect(url);
     server.listen(app.get("port"), ()=>{
         console.log("app is lestening");
     });
