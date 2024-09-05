@@ -19,10 +19,6 @@ app.use(express.json({limit : "40kb"}));
 app.use(express.urlencoded({ limit : "40kb", extended: true}));
  app.use("/api/v1/users", userRoutes);
  const url=process.env.MONGO_URL;
- if (!url) {
-   console.error("MONGO_URL environment variable is not set");
-   process.exit(1);
- }
  
  
  
