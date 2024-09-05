@@ -1,6 +1,4 @@
 
-import 'dotenv/config';
-
 
 import 'dotenv/config';
 import express from "express";
@@ -20,7 +18,7 @@ app.use(cors());
 app.use(express.json({limit : "40kb"}));
 app.use(express.urlencoded({ limit : "40kb", extended: true}));
  app.use("/api/v1/users", userRoutes);
- const url =process.env.MONGO_URL;
+ const url=process.env.MONGO_URL;
  if (!url) {
    console.error("MONGO_URL environment variable is not set");
    process.exit(1);
@@ -28,7 +26,7 @@ app.use(express.urlencoded({ limit : "40kb", extended: true}));
  
  
  
- ;
+console.log(url);
 const start = async()=>{
            
     const connectionDb = await mongoose.connect(url);
