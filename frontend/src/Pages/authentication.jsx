@@ -77,7 +77,7 @@ let handleAuth = async() =>{
             sm={4}
             md={7}
             sx={{
-                backgroundImage: './public/download.jpeg',
+                backgroundImage: '',
                 backgroundRepeat: 'no-repeat',
                 backgroundColor: (t) =>
                     t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
